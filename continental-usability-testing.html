@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&amp;family=Hanken+Grotesk:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<script src="image-slot.js"></script>
+<style>
+  *{box-sizing:border-box;}
+  html,body{margin:0;}
+  body{background:#FAF7F1;color:#1C1A17;font-family:'Hanken Grotesk',system-ui,sans-serif;-webkit-font-smoothing:antialiased;}
+  ::selection{background:#1C1A17;color:#FAF7F1;}
+  a{color:inherit;text-decoration:none;}
+  ul{margin:0;padding:0;list-style:none;}
+</style>
+</helmet>
+
+<div style="min-height:100vh;">
+
+  <header style="max-width:1120px;margin:0 auto;padding:26px 40px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(28,26,23,0.08);">
+    <a href="index.html" style="font-size:13.5px;font-weight:600;color:#7A736B;" style-hover="color:#1C1A17;">← Back to work</a>
+    <a href="index.html" style="font-family:'Newsreader',serif;font-size:22px;font-weight:500;">Azka<span style="color:#B85B33;">.</span></a>
+  </header>
+
+  <!-- CONTINENTAL SECTION SWITCHER -->
+  <div style="background:#F1DDCB;border-bottom:1px solid rgba(28,26,23,0.08);">
+    <div style="max-width:1120px;margin:0 auto;padding:14px 40px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#9A4A12;margin-right:2px;">Continental project</span>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;">
+        <a href="continental-features-redesign.html" style="font-family:'JetBrains Mono',monospace;font-size:12.5px;letter-spacing:0.02em;border-radius:999px;padding:8px 18px;border:1px solid rgba(28,26,23,0.22);color:#5C4A32;font-weight:500;transition:all .2s ease;white-space:nowrap;" style-hover="background:#1C1A17;color:#FAF7F1;border-color:#1C1A17;">Platform UX Redesign</a>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:12.5px;letter-spacing:0.02em;border-radius:999px;padding:8px 18px;background:#1C1A17;color:#FAF7F1;font-weight:500;white-space:nowrap;">Usability Testing</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section style="max-width:1120px;margin:0 auto;padding:64px 40px 0;">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:24px;">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#9A4A12;background:#F1DDCB;border-radius:999px;padding:5px 12px;">Continental</span>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#A8A096;">CONTICONNECT FEATURES TESTING</span>
+    </div>
+    <h1 style="font-family:'Newsreader',serif;font-weight:400;font-size:clamp(38px,5.6vw,68px);line-height:1.04;letter-spacing:-0.015em;margin:0 0 22px;max-width:16ch;">Usability testing</h1>
+    <p style="font-size:clamp(17px,2vw,20px);line-height:1.55;color:#5C554D;margin:0;max-width:58ch;">Evaluating and validating an improved onboarding experience through usability testing with customers from BeNeLux and the UK.</p>
+
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:48px;">
+      <div style="border:1px solid rgba(28,26,23,0.10);border-radius:14px;padding:24px;"><div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#A8A096;margin-bottom:8px;">Participants</div><div style="font-family:'Newsreader',serif;font-size:26px;">Multiple</div></div>
+      <div style="border:1px solid rgba(28,26,23,0.10);border-radius:14px;padding:24px;"><div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#A8A096;margin-bottom:8px;">Regions</div><div style="font-family:'Newsreader',serif;font-size:26px;">BeNeLux &amp; UK</div></div>
+      <div style="border:1px solid rgba(28,26,23,0.10);border-radius:14px;padding:24px;"><div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#A8A096;margin-bottom:8px;">Tasks</div><div style="font-family:'Newsreader',serif;font-size:26px;">3</div></div>
+      <div style="border:1px solid rgba(28,26,23,0.10);border-radius:14px;padding:24px;"><div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#A8A096;margin-bottom:8px;">Methods</div><div style="font-family:'Newsreader',serif;font-size:26px;">5</div></div>
+    </div>
+  </section>
+
+  <!-- INTRODUCTION -->
+  <section style="max-width:1120px;margin:0 auto;padding:80px 40px 0;">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;">
+      <div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:#B85B33;margin-bottom:18px;">Introduction</div>
+        <p style="font-size:17.5px;line-height:1.62;color:#3A352F;margin:0;">During my internship, I was part of the UX team tasked with evaluating and validating the improved version of the onboarding experience for the platform. This research involved comprehensive usability testing and user interviews to understand how the platform fits into daily operations.</p>
+      </div>
+      <image-slot id="ut-intro" style="width:100%;height:300px;display:block;" shape="rounded" radius="14" placeholder="Research session photo"></image-slot>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px;">
+      <div style="background:#FFFDF9;border:1px solid rgba(28,26,23,0.10);border-radius:14px;padding:28px;">
+        <div style="width:34px;height:34px;border-radius:9px;background:#F1DDCB;margin-bottom:18px;"></div>
+        <h3 style="font-family:'Newsreader',serif;font-weight:500;font-size:20px;margin:0 0 8px;">Usability Testing</h3>
+        <p style="font-size:14.5px;line-height:1.55;color:#7A736B;margin:0;">Current and redesigned profile-creation process evaluation.</p>
+      </div>
+      <div style="background:#FFFDF9;border:1px solid rgba(28,26,23,0.10);border-radius:14px;padding:28px;">
+        <div style="width:34px;height:34px;border-radius:9px;background:#BEE0DB;margin-bottom:18px;"></div>
+        <h3 style="font-family:'Newsreader',serif;font-weight:500;font-size:20px;margin:0 0 8px;">Interactive Prototypes</h3>
+        <p style="font-size:14.5px;line-height:1.55;color:#7A736B;margin:0;">Testing across desktop and mobile environments.</p>
+      </div>
+      <div style="background:#FFFDF9;border:1px solid rgba(28,26,23,0.10);border-radius:14px;padding:28px;">
+        <div style="width:34px;height:34px;border-radius:9px;background:#D8DDF2;margin-bottom:18px;"></div>
+        <h3 style="font-family:'Newsreader',serif;font-weight:500;font-size:20px;margin:0 0 8px;">Device Integration</h3>
+        <p style="font-size:14.5px;line-height:1.55;color:#7A736B;margin:0;">New scanning-device feedback collection.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESEARCH PROCESS -->
+  <section style="max-width:1120px;margin:0 auto;padding:88px 40px 0;">
+    <div style="border-top:1px solid rgba(28,26,23,0.12);padding-top:44px;">
+      <h2 style="font-family:'Newsreader',serif;font-weight:500;font-size:clamp(26px,3.2vw,36px);letter-spacing:-0.01em;margin:0 0 32px;text-align:center;">Research Process</h2>
+      <div style="display:flex;align-items:stretch;justify-content:center;gap:8px;flex-wrap:wrap;">
+        <div style="flex:1;min-width:150px;border:1px solid rgba(28,26,23,0.10);border-radius:14px;padding:24px;text-align:center;background:#FBEEEA;"><div style="width:32px;height:32px;border-radius:50%;background:#F1C9B6;margin:0 auto 12px;"></div><div style="font-weight:600;font-size:15px;">Problem Definition</div><div style="font-size:13px;color:#7A736B;margin-top:4px;">Identify pain points</div></div>
+        <div style="display:flex;align-items:center;color:#A8A096;font-size:20px;">→</div>
+        <div style="flex:1;min-width:150px;border:1px solid rgba(28,26,23,0.10);border-radius:14px;padding:24px;text-align:center;"><div style="width:32px;height:32px;border-radius:50%;background:#BEE0DB;margin:0 auto 12px;"></div><div style="font-weight:600;font-size:15px;">Hypothesis</div><div style="font-size:13px;color:#7A736B;margin-top:4px;">Define expectations</div></div>
+        <div style="display:flex;align-items:center;color:#A8A096;font-size:20px;">→</div>
+        <div style="flex:1;min-width:150px;border:1px solid rgba(28,26,23,0.10);border-radius:14px;padding:24px;text-align:center;"><div style="width:32px;height:32px;border-radius:50%;background:#D8DDF2;margin:0 auto 12px;"></div><div style="font-weight:600;font-size:15px;">Testing</div><div style="font-size:13px;color:#7A736B;margin-top:4px;">Conduct studies</div></div>
+        <div style="display:flex;align-items:center;color:#A8A096;font-size:20px;">→</div>
+        <div style="flex:1;min-width:150px;border:1px solid rgba(28,26,23,0.10);border-radius:14px;padding:24px;text-align:center;"><div style="width:32px;height:32px;border-radius:50%;background:#E4DED4;margin:0 auto 12px;"></div><div style="font-weight:600;font-size:15px;">Analysis</div><div style="font-size:13px;color:#7A736B;margin-top:4px;">Extract insights</div></div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:32px;">
+        <div style="background:#FBEEEA;border:1px solid rgba(181,71,47,0.18);border-radius:14px;padding:30px;">
+          <div style="display:flex;align-items:center;gap:9px;margin-bottom:14px;"><span style="width:9px;height:9px;border-radius:50%;background:#B5472F;"></span><span style="font-weight:600;font-size:16px;color:#B5472F;">Problem</span></div>
+          <p style="font-size:14.5px;line-height:1.55;color:#5C554D;margin:0 0 18px;">The existing onboarding process was reported to be unintuitive and error-prone, especially for new users. The goal was to validate whether a redesigned version could improve usability, reduce errors, and better align with real-world workflows.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;">
+            <span style="font-size:12px;color:#B5472F;background:#F6DDD5;border-radius:999px;padding:4px 11px;">Unintuitive</span>
+            <span style="font-size:12px;color:#B5472F;background:#F6DDD5;border-radius:999px;padding:4px 11px;">Error-prone</span>
+            <span style="font-size:12px;color:#B5472F;background:#F6DDD5;border-radius:999px;padding:4px 11px;">Poor workflow alignment</span>
+          </div>
+        </div>
+        <div style="background:#EDF4EF;border:1px solid rgba(79,123,91,0.20);border-radius:14px;padding:30px;">
+          <div style="display:flex;align-items:center;gap:9px;margin-bottom:14px;"><span style="width:9px;height:9px;border-radius:50%;background:#4F7B5B;"></span><span style="font-weight:600;font-size:16px;color:#4F7B5B;">Hypothesis</span></div>
+          <p style="font-size:14.5px;line-height:1.55;color:#5C554D;margin:0 0 18px;">The redesigned onboarding interface will be more intuitive, reduce cognitive load, and improve task efficiency across all user types — from beginners to experts.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;">
+            <span style="font-size:12px;color:#4F7B5B;background:#DCEBE0;border-radius:999px;padding:4px 11px;">More intuitive</span>
+            <span style="font-size:12px;color:#4F7B5B;background:#DCEBE0;border-radius:999px;padding:4px 11px;">Reduced cognitive load</span>
+            <span style="font-size:12px;color:#4F7B5B;background:#DCEBE0;border-radius:999px;padding:4px 11px;">Better efficiency</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESEARCH TASKS -->
+  <section style="max-width:1120px;margin:0 auto;padding:88px 40px 0;">
+    <div style="border-top:1px solid rgba(28,26,23,0.12);padding-top:44px;">
+      <h2 style="font-family:'Newsreader',serif;font-weight:500;font-size:clamp(26px,3.2vw,36px);letter-spacing:-0.01em;margin:0 0 32px;">Research Tasks</h2>
+
+      <div style="display:flex;flex-direction:column;gap:20px;">
+        <!-- Task 1 -->
+        <div style="display:grid;grid-template-columns:1.4fr 1fr;gap:28px;align-items:center;border:1px solid rgba(28,26,23,0.10);border-left:4px solid #1C1A17;border-radius:14px;padding:30px;background:#FFFDF9;">
+          <div>
+            <div style="font-family:'Newsreader',serif;font-weight:500;font-size:21px;margin-bottom:8px;">Task 1 · Web Portal Usability Testing</div>
+            <p style="font-size:14.5px;color:#3A352F;margin:0 0 16px;"><strong style="font-weight:600;">Scenario:</strong> Vehicle profile creation in an office setting using the web portal.</p>
+            <div style="background:#F6F2EA;border-radius:10px;padding:14px 16px;margin-bottom:12px;"><span style="font-weight:600;font-size:13px;">Method:</span> <span style="font-size:13.5px;color:#5C554D;">Think-aloud protocol with both current and redesigned versions.</span></div>
+            <div style="background:#EDF4EF;border-radius:10px;padding:14px 16px;"><span style="font-weight:600;font-size:13px;color:#4F7B5B;">Outcome:</span> <span style="font-size:13.5px;color:#5C554D;">All participants preferred the new version due to improved clarity and reduced error potential.</span></div>
+          </div>
+          <div role="img" aria-label="Illustration: desktop web portal on an office desk" style="width:100%;height:200px;border-radius:12px;background:#F1EDE4;border:1px solid rgba(28,26,23,0.08);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0;padding:22px;">
+            <div style="width:74%;background:#FFFFFF;border:1.5px solid #1C1A17;border-radius:6px 6px 2px 2px;overflow:hidden;">
+              <div style="height:14px;background:#1C1A17;display:flex;align-items:center;gap:4px;padding:0 6px;">
+                <span style="width:4px;height:4px;border-radius:50%;background:#F1EDE4;"></span>
+                <span style="width:4px;height:4px;border-radius:50%;background:#8E877E;"></span>
+                <span style="width:4px;height:4px;border-radius:50%;background:#8E877E;"></span>
+              </div>
+              <div style="display:flex;gap:7px;padding:10px;">
+                <div style="width:26%;display:flex;flex-direction:column;gap:5px;">
+                  <div style="height:6px;border-radius:2px;background:#1C1A17;"></div>
+                  <div style="height:5px;border-radius:2px;background:#D9D2C6;"></div>
+                  <div style="height:5px;border-radius:2px;background:#D9D2C6;"></div>
+                  <div style="height:5px;border-radius:2px;background:#D9D2C6;"></div>
+                </div>
+                <div style="flex:1;display:flex;flex-direction:column;gap:5px;">
+                  <div style="height:5px;width:55%;border-radius:2px;background:#B0A89C;"></div>
+                  <div style="height:12px;border-radius:3px;background:#EDE7DC;"></div>
+                  <div style="height:12px;border-radius:3px;background:#EDE7DC;"></div>
+                  <div style="height:9px;width:38%;border-radius:3px;background:#B85B33;"></div>
+                </div>
+              </div>
+            </div>
+            <div style="width:26%;height:12px;background:#1C1A17;clip-path:polygon(38% 0,62% 0,100% 100%,0 100%);"></div>
+            <div style="width:46%;height:4px;border-radius:2px;background:#1C1A17;"></div>
+          </div>
+        </div>
+        <!-- Task 2 -->
+        <div style="display:grid;grid-template-columns:1.4fr 1fr;gap:28px;align-items:center;border:1px solid rgba(28,26,23,0.10);border-left:4px solid #4F7B5B;border-radius:14px;padding:30px;background:#FFFDF9;">
+          <div>
+            <div style="font-family:'Newsreader',serif;font-weight:500;font-size:21px;margin-bottom:8px;">Task 2 · Mobile Prototype Walkthrough</div>
+            <p style="font-size:14.5px;color:#3A352F;margin:0 0 16px;"><strong style="font-weight:600;">Scenario:</strong> Vehicle creation in a workshop environment using the mobile application.</p>
+            <div style="background:#F6F2EA;border-radius:10px;padding:14px 16px;margin-bottom:12px;"><span style="font-weight:600;font-size:13px;">Method:</span> <span style="font-size:13.5px;color:#5C554D;">Cognitive walkthrough using a Figma prototype.</span></div>
+            <div style="background:#EDF4EF;border-radius:10px;padding:14px 16px;"><span style="font-weight:600;font-size:13px;color:#4F7B5B;">Outcome:</span> <span style="font-size:13.5px;color:#5C554D;">Participants appreciated the process efficiency but noted areas for improvement in navigation, and external constraints such as severe outdoor weather and internet connectivity.</span></div>
+          </div>
+          <div role="img" aria-label="Illustration: mobile prototype used in a workshop" style="width:100%;height:200px;border-radius:12px;background:#E7EFE8;border:1px solid rgba(79,123,91,0.18);display:flex;align-items:center;justify-content:center;gap:16px;padding:20px;">
+            <div style="width:74px;height:150px;background:#FFFFFF;border:1.5px solid #2E4A36;border-radius:11px;padding:8px 7px;display:flex;flex-direction:column;gap:6px;">
+              <div style="width:22px;height:3px;border-radius:2px;background:#2E4A36;margin:0 auto 2px;"></div>
+              <div style="height:5px;width:70%;border-radius:2px;background:#2E4A36;"></div>
+              <div style="height:22px;border-radius:4px;background:#DCEBE0;"></div>
+              <div style="height:22px;border-radius:4px;background:#DCEBE0;"></div>
+              <div style="height:22px;border-radius:4px;border:1.5px solid #4F7B5B;"></div>
+              <div style="margin-top:auto;height:11px;border-radius:4px;background:#4F7B5B;"></div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:9px;align-items:flex-start;">
+              <div style="width:52px;height:26px;border-radius:4px 4px 10px 10px;background:#B8C7BB;"></div>
+              <div style="width:66px;height:8px;border-radius:3px;background:#96AD9C;"></div>
+              <div style="width:44px;height:8px;border-radius:3px;background:#96AD9C;"></div>
+              <div style="width:58px;height:3px;border-radius:2px;background:#4F7B5B;"></div>
+            </div>
+          </div>
+        </div>
+        <!-- Task 3 -->
+        <div style="display:grid;grid-template-columns:1.4fr 1fr;gap:28px;align-items:center;border:1px solid rgba(28,26,23,0.10);border-left:4px solid #B85B33;border-radius:14px;padding:30px;background:#FFFDF9;">
+          <div>
+            <div style="font-family:'Newsreader',serif;font-weight:500;font-size:21px;margin-bottom:8px;">Task 3 · New Scan Device Integration</div>
+            <p style="font-size:14.5px;color:#3A352F;margin:0 0 16px;"><strong style="font-weight:600;">Scenario:</strong> Introduction to a new scanning device in a workshop environment.</p>
+            <div style="background:#F6F2EA;border-radius:10px;padding:14px 16px;margin-bottom:12px;"><span style="font-weight:600;font-size:13px;">Method:</span> <span style="font-size:13.5px;color:#5C554D;">Interactive prototype demonstration and feedback collection.</span></div>
+            <div style="background:#EDF4EF;border-radius:10px;padding:14px 16px;"><span style="font-weight:600;font-size:13px;color:#4F7B5B;">Outcome:</span> <span style="font-size:13.5px;color:#5C554D;">Users saw potential for improving efficiency but requested clearer guidance — especially for experienced users with learned behavior, plus better error handling and accounting for external factors.</span></div>
+          </div>
+          <div role="img" aria-label="Illustration: handheld scanner reading a tyre tag" style="width:100%;height:200px;border-radius:12px;background:#F5E7DD;border:1px solid rgba(184,91,51,0.18);display:flex;align-items:center;justify-content:center;gap:18px;padding:20px;">
+            <div style="display:flex;flex-direction:column;align-items:center;">
+              <div style="width:56px;height:40px;border-radius:7px 7px 3px 3px;background:#1C1A17;display:flex;align-items:center;justify-content:center;">
+                <div style="width:34px;height:20px;border-radius:2px;background:#B85B33;"></div>
+              </div>
+              <div style="width:22px;height:44px;background:#1C1A17;border-radius:0 0 8px 8px;"></div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:5px;">
+              <div style="width:46px;height:2.5px;border-radius:2px;background:#D08A62;"></div>
+              <div style="width:32px;height:2.5px;border-radius:2px;background:#D08A62;"></div>
+              <div style="width:46px;height:2.5px;border-radius:2px;background:#D08A62;"></div>
+            </div>
+            <div style="width:64px;height:88px;border-radius:8px;background:#FFFFFF;border:1.5px solid #1C1A17;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;">
+              <div style="display:flex;gap:2.5px;align-items:flex-end;height:30px;">
+                <span style="width:3px;height:30px;background:#1C1A17;"></span>
+                <span style="width:5px;height:30px;background:#1C1A17;"></span>
+                <span style="width:2px;height:30px;background:#1C1A17;"></span>
+                <span style="width:4px;height:30px;background:#1C1A17;"></span>
+                <span style="width:2px;height:30px;background:#1C1A17;"></span>
+                <span style="width:5px;height:30px;background:#1C1A17;"></span>
+              </div>
+              <div style="width:38px;height:4px;border-radius:2px;background:#C9C2B8;"></div>
+              <div style="width:26px;height:4px;border-radius:2px;background:#C9C2B8;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- METHODOLOGY & ANALYSIS -->
+  <section style="max-width:1120px;margin:0 auto;padding:88px 40px 0;">
+    <div style="border-top:1px solid rgba(28,26,23,0.12);padding-top:44px;">
+      <h2 style="font-family:'Newsreader',serif;font-weight:500;font-size:clamp(26px,3.2vw,36px);letter-spacing:-0.01em;margin:0 0 24px;">Methodology &amp; Analysis</h2>
+      <div style="display:flex;flex-wrap:wrap;gap:10px;margin-bottom:36px;">
+        <span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#7A736B;border:1px solid rgba(28,26,23,0.14);border-radius:999px;padding:7px 16px;">Lab Testing</span>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#7A736B;border:1px solid rgba(28,26,23,0.14);border-radius:999px;padding:7px 16px;">Interviews</span>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#7A736B;border:1px solid rgba(28,26,23,0.14);border-radius:999px;padding:7px 16px;">Figma Prototypes</span>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#7A736B;border:1px solid rgba(28,26,23,0.14);border-radius:999px;padding:7px 16px;">Think-Aloud</span>
+        <span style="font-family:'JetBrains Mono',monospace;font-size:12px;color:#7A736B;border:1px solid rgba(28,26,23,0.14);border-radius:999px;padding:7px 16px;">Cognitive Walk</span>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;">
+        <div style="border:1px solid rgba(28,26,23,0.10);border-radius:14px;padding:30px;">
+          <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#A8A096;margin-bottom:18px;">Approaches Considered</div>
+          <ul style="display:flex;flex-direction:column;gap:13px;">
+            <li style="font-size:14.5px;color:#5C554D;padding-left:18px;position:relative;"><span style="position:absolute;left:0;color:#A8A096;">•</span>Lab-based usability testing in a controlled environment</li>
+            <li style="font-size:14.5px;color:#5C554D;padding-left:18px;position:relative;"><span style="position:absolute;left:0;color:#A8A096;">•</span>Pre-task interviews and post-task feedback sessions</li>
+            <li style="font-size:14.5px;color:#5C554D;padding-left:18px;position:relative;"><span style="position:absolute;left:0;color:#A8A096;">•</span>Figma prototypes for unbuilt features</li>
+            <li style="font-size:14.5px;color:#5C554D;padding-left:18px;position:relative;"><span style="position:absolute;left:0;color:#A8A096;">•</span>Think-aloud protocol for developed prototypes</li>
+            <li style="font-size:14.5px;color:#5C554D;padding-left:18px;position:relative;"><span style="position:absolute;left:0;color:#A8A096;">•</span>Cognitive walkthrough for Figma prototypes</li>
+          </ul>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:24px;">
+          <div style="background:#EDF4EF;border:1px solid rgba(79,123,91,0.20);border-radius:14px;padding:26px;">
+            <div style="display:flex;align-items:center;gap:9px;margin-bottom:14px;"><span style="width:9px;height:9px;border-radius:50%;background:#4F7B5B;"></span><span style="font-weight:600;font-size:15px;color:#4F7B5B;">Advantages</span></div>
+            <ul style="display:flex;flex-direction:column;gap:10px;">
+              <li style="font-size:14px;color:#5C554D;padding-left:20px;position:relative;"><span style="position:absolute;left:0;color:#4F7B5B;">✓</span>Controlled environment reduced external variables</li>
+              <li style="font-size:14px;color:#5C554D;padding-left:20px;position:relative;"><span style="position:absolute;left:0;color:#4F7B5B;">✓</span>Think-aloud provided deep insight into user thought processes</li>
+              <li style="font-size:14px;color:#5C554D;padding-left:20px;position:relative;"><span style="position:absolute;left:0;color:#4F7B5B;">✓</span>Figma prototypes enabled early feedback before development</li>
+            </ul>
+          </div>
+          <div style="background:#FBEEEA;border:1px solid rgba(181,71,47,0.18);border-radius:14px;padding:26px;">
+            <div style="display:flex;align-items:center;gap:9px;margin-bottom:14px;"><span style="width:9px;height:9px;border-radius:50%;background:#B5472F;"></span><span style="font-weight:600;font-size:15px;color:#B5472F;">Limitations</span></div>
+            <ul style="display:flex;flex-direction:column;gap:10px;">
+              <li style="font-size:14px;color:#5C554D;padding-left:18px;position:relative;"><span style="position:absolute;left:0;color:#B5472F;">•</span>Lab setting may have created pressure for novice users</li>
+              <li style="font-size:14px;color:#5C554D;padding-left:18px;position:relative;"><span style="position:absolute;left:0;color:#B5472F;">•</span>Limited interactivity in Figma prototypes restricted full exploration</li>
+              <li style="font-size:14px;color:#5C554D;padding-left:18px;position:relative;"><span style="position:absolute;left:0;color:#B5472F;">•</span>Small sample size may not represent all user types and requirements</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer style="max-width:1120px;margin:80px auto 0;padding:40px 40px 64px;border-top:1px solid rgba(28,26,23,0.10);">
+    <p style="font-size:14px;line-height:1.6;color:#7A736B;text-align:center;margin:0 auto 28px;">This project was completed during my internship as part of the UX research team.</p>
+    <div style="text-align:center;"><a href="index.html" style="font-size:13.5px;font-weight:600;color:#B85B33;" style-hover="text-decoration:underline;">← Back to all work</a></div>
+  </footer>
+
+</div>
+</x-dc>
+</body>
+</html>

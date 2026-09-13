@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&amp;family=Hanken+Grotesk:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<script src="image-slot.js"></script>
+<style>
+  *{box-sizing:border-box;}
+  html,body{margin:0;}
+  body{background:#FAF7F1;color:#1C1A17;font-family:'Hanken Grotesk',system-ui,sans-serif;-webkit-font-smoothing:antialiased;}
+  ::selection{background:#1C1A17;color:#FAF7F1;}
+  a{color:inherit;text-decoration:none;}
+  ul{margin:0;padding:0;list-style:none;}
+  .wf-tab{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.06em;text-transform:uppercase;border-radius:999px;padding:9px 16px;cursor:pointer;border:1px solid rgba(28,26,23,0.16);background:transparent;color:#7A736B;transition:all .25s ease;white-space:nowrap;font-weight:500;}
+  .wf-tab:hover{border-color:#1C1A17;color:#1C1A17;}
+  .wf-tab.on{background:#1C1A17;color:#FAF7F1;border-color:#1C1A17;}
+</style>
+</helmet>
+
+<div style="min-height:100vh;">
+
+  <header style="max-width:1120px;margin:0 auto;padding:26px 40px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(28,26,23,0.08);">
+    <a href="index.html" style="font-size:13.5px;font-weight:600;color:#7A736B;" style-hover="color:#1C1A17;">← Back to work</a>
+    <a href="index.html" style="font-family:'Newsreader',serif;font-size:22px;font-weight:500;">Azka<span style="color:#B85B33;">.</span></a>
+  </header>
+
+  <!-- CONTINENTAL SECTION SWITCHER -->
+  <div style="background:#F1DDCB;border-bottom:1px solid rgba(28,26,23,0.08);">
+    <div style="max-width:1120px;margin:0 auto;padding:14px 40px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#9A4A12;margin-right:2px;">Continental project</span>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;">
+        <span style="font-family:'JetBrains Mono',monospace;font-size:12.5px;letter-spacing:0.02em;border-radius:999px;padding:8px 18px;background:#1C1A17;color:#FAF7F1;font-weight:500;white-space:nowrap;">Platform UX Redesign</span>
+        <a href="continental-usability-testing.html" style="font-family:'JetBrains Mono',monospace;font-size:12.5px;letter-spacing:0.02em;border-radius:999px;padding:8px 18px;border:1px solid rgba(28,26,23,0.22);color:#5C4A32;font-weight:500;transition:all .2s ease;white-space:nowrap;" style-hover="background:#1C1A17;color:#FAF7F1;border-color:#1C1A17;">Usability Testing</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section style="max-width:1120px;margin:0 auto;padding:64px 40px 0;">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:24px;">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#9A4A12;background:#F1DDCB;border-radius:999px;padding:5px 12px;">Continental</span>
+      <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#A8A096;">User Research &amp; Usability Tools</span>
+    </div>
+    <h1 style="font-family:'Newsreader',serif;font-weight:400;font-size:clamp(38px,5.6vw,68px);line-height:1.04;letter-spacing:-0.015em;margin:0 0 22px;max-width:18ch;">Fleet Management Platform UX Redesign</h1>
+    <p style="font-size:clamp(17px,2vw,20px);line-height:1.55;color:#5C554D;margin:0;max-width:60ch;">A comprehensive redesign of core workflows in a B2B fleet-management platform — focused on reducing cognitive load, improving navigation efficiency, and enhancing information accessibility.</p>
+
+  </section>
+
+  <!-- STICKY WORKFLOW NAV -->
+  <div style="position:sticky;top:0;z-index:40;background:rgba(250,247,241,0.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(28,26,23,0.10);">
+    <div style="max-width:1120px;margin:0 auto;padding:12px 40px;display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#A8A096;margin-right:6px;">Workflows</span>
+      <button class="wf-tab {{ onCreation }}" onClick="{{ goCreation }}">Vehicle Creation</button>
+      <button class="wf-tab {{ onDetails }}" onClick="{{ goDetails }}">Vehicle &amp; Tire Details</button>
+      <button class="wf-tab {{ onToggle }}" onClick="{{ goToggle }}">Feature Toggle</button>
+    </div>
+  </div>
+
+  <section style="max-width:1120px;margin:0 auto;padding:48px 40px 0;">
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
+      <div style="border:1px solid rgba(28,26,23,0.10);border-radius:14px;padding:26px 28px;">
+        <div style="font-family:'Newsreader',serif;font-size:42px;line-height:1;margin-bottom:8px;">3</div>
+        <div style="font-size:14px;color:#7A736B;">Core workflows redesigned</div>
+      </div>
+      <div style="border:1px solid rgba(28,26,23,0.10);border-radius:14px;padding:26px 28px;">
+        <div style="font-family:'Newsreader',serif;font-size:42px;line-height:1;margin-bottom:8px;">2</div>
+        <div style="font-size:14px;color:#7A736B;">Platforms (Web &amp; Mobile)</div>
+      </div>
+      <div style="border:1px solid rgba(28,26,23,0.10);border-radius:14px;padding:26px 28px;">
+        <div style="font-family:'Newsreader',serif;font-size:42px;line-height:1;margin-bottom:8px;">15+</div>
+        <div style="font-size:14px;color:#7A736B;">Iterative design sessions</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OVERVIEW -->
+  <section style="max-width: 1120px; margin: 0 auto; padding: 80px 40px 0; display: none">
+    <div style="font-family: 'JetBrains Mono',monospace; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: #B85B33; margin-bottom: 18px; display: none">Overview</div>
+    <p style="font-size: 19px; line-height: 1.6; color: #3A352F; margin: 0 0 44px; max-width: 74ch; display: none">Working on a B2B fleet-management platform, I worked on UX redesign of three workflows that were causing friction for workshop technicians and fleet managers (external users) as well as internal users. Through user research, iterative design, and stakeholder collaboration, we simplified complex processes and improved task efficiency.</p>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
+      <div style="background: #FFFDF9; border: 1px solid rgba(28,26,23,0.10); border-radius: 14px; padding: 28px; display: none">
+        <div style="width:34px;height:34px;border-radius:9px;background:#F1DDCB;margin-bottom:18px;"></div>
+        <h3 style="font-family:'Newsreader',serif;font-weight:500;font-size:20px;margin:0 0 8px;">Vehicle Creation Process</h3>
+        <p style="font-size:14.5px;line-height:1.55;color:#7A736B;margin:0;">Simplified tire and sensor assignment with better visual context and reduced steps.</p>
+      </div>
+      <div style="background: #FFFDF9; border: 1px solid rgba(28,26,23,0.10); border-radius: 14px; padding: 28px; display: none">
+        <div style="width:34px;height:34px;border-radius:9px;background:#BEE0DB;margin-bottom:18px;"></div>
+        <h3 style="font-family:'Newsreader',serif;font-weight:500;font-size:20px;margin:0 0 8px;">Vehicle &amp; Tire Details</h3>
+        <p style="font-size:14.5px;line-height:1.55;color:#7A736B;margin:0;">Reduced scrolling and improved information access with interactive navigation.</p>
+      </div>
+      <div style="background: #FFFDF9; border: 1px solid rgba(28,26,23,0.10); border-radius: 14px; padding: 28px; display: none">
+        <div style="width:34px;height:34px;border-radius:9px;background:#D8DDF2;margin-bottom:18px;"></div>
+        <h3 style="font-family:'Newsreader',serif;font-weight:500;font-size:20px;margin:0 0 8px;">Feature Toggle</h3>
+        <p style="font-size:14.5px;line-height:1.55;color:#7A736B;margin:0;">Redesigned feature activation with categorization and clearer impact visibility.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORKFLOW 1: VEHICLE CREATION -->
+  <section id="vehicle-creation" style="max-width:1120px;margin:0 auto;padding:96px 40px 0;scroll-margin-top:64px;">
+    <div style="border-top:1px solid rgba(28,26,23,0.12);padding-top:44px;">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:#A8A096;margin-bottom:12px;">Workflow 01 · Step 5 — Tire &amp; Sensor Assignment</div>
+      <h2 style="font-family:'Newsreader',serif;font-weight:500;font-size:clamp(28px,3.6vw,42px);letter-spacing:-0.01em;margin:0 0 40px;">Vehicle Creation Process</h2>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;">
+        <div style="background:#FBEEEA;border:1px solid rgba(181,71,47,0.18);border-radius:14px;padding:30px;">
+          <div style="display:flex;align-items:center;gap:9px;margin-bottom:18px;"><span style="width:9px;height:9px;border-radius:50%;background:#B5472F;"></span><span style="font-weight:600;font-size:16px;color:#B5472F;white-space:nowrap;">The Challenge</span></div>
+          <ul style="display:flex;flex-direction:column;gap:11px;">
+            <li style="font-size:14.5px;line-height:1.5;color:#5C554D;padding-left:18px;position:relative;"><span style="position:absolute;left:0;color:#B5472F;">•</span>{{ challengeText }}</li>
+            <li style="font-size:14.5px;line-height:1.5;color:#5C554D;padding-left:18px;position:relative;"><span style="position:absolute;left:0;color:#B5472F;">•</span>Tire position icons are cluttered with detail that doesn't help users make decisions — confirmed in usability testing</li>
+          </ul>
+        </div>
+        <div style="background:#EDF4EF;border:1px solid rgba(79,123,91,0.20);border-radius:14px;padding:30px;">
+          <div style="display:flex;align-items:center;gap:9px;margin-bottom:18px;"><span style="width:9px;height:9px;border-radius:50%;background:#4F7B5B;"></span><span style="font-weight:600;font-size:16px;color:#4F7B5B;white-space:nowrap;">The Solution</span></div>
+          <ul style="display:flex;flex-direction:column;gap:11px;">
+            <li style="font-size:14.5px;line-height:1.5;color:#5C554D;padding-left:20px;position:relative;"><span style="position:absolute;left:0;color:#4F7B5B;">✓</span>Parallel display of data and birdview reduces cognitive load by providing a visual map of where data is being added</li>
+            <li style="font-size:14.5px;line-height:1.5;color:#5C554D;padding-left:20px;position:relative;"><span style="position:absolute;left:0;color:#4F7B5B;">✓</span>Simplified position legend with fewer icons</li>
+            <li style="font-size:14.5px;line-height:1.5;color:#5C554D;padding-left:20px;position:relative;"><span style="position:absolute;left:0;color:#4F7B5B;">✓</span>Background and foreground logic puts focus on the input currently in progress, dimming everything else so attention stays on one thing at a time — reducing chances of error</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Web portal before/after -->
+    <div style="margin-top:56px;">
+      <h3 style="font-family:'Newsreader',serif;font-weight:500;font-size:24px;margin:0 0 6px;">Web Portal Redesign</h3>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:22px;">
+        <div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#B5472F;margin-bottom:10px;">Before</div>
+          <div style="background:#FFFDF9;border:1px solid rgba(28,26,23,0.10);border-radius:12px;padding:16px;display:flex;align-items:center;justify-content:center;min-height:300px;">
+            <img src="assets/web-portal-before.png" alt="Web portal — before" style="width:100%;height:auto;display:block;border-radius:6px;box-shadow:0 6px 18px rgba(28,26,23,0.08);">
+          </div>
+          <ul style="margin-top:16px;display:flex;flex-direction:column;gap:7px;">
+            <li style="font-size:13.5px;color:#7A736B;padding-left:16px;position:relative;"><span style="position: absolute; left: 0px;">•</span>Double scroll in single screen</li>
+            <li style="font-size:13.5px;color:#7A736B;padding-left:16px;position:relative;"><span style="position: absolute; left: 0px;">•</span>Input fields co relation ambiguity.&nbsp;</li>
+            <li style="font-size:13.5px;color:#7A736B;padding-left:16px;position:relative;"><span style="position: absolute; left: 0px;">•</span>Crowded tire position with icons</li>
+          </ul>
+        </div>
+        <div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#4F7B5B;margin-bottom:10px;">After</div>
+          <div style="background:#FFFDF9;border:1px solid rgba(28,26,23,0.10);border-radius:12px;padding:16px;display:flex;align-items:center;justify-content:center;min-height:300px;">
+            <img src="assets/web-portal-after.png" alt="Web portal — after" style="width:100%;height:auto;display:block;border-radius:6px;box-shadow:0 6px 18px rgba(28,26,23,0.08);">
+          </div>
+          <ul style="margin-top:16px;display:flex;flex-direction:column;gap:7px;">
+            <li style="font-size:13.5px;color:#7A736B;padding-left:16px;position:relative;"><span style="position:absolute;left:0;color:#4F7B5B;">✓</span>Vertical alignment with screen flow</li>
+            <li style="font-size:13.5px;color:#7A736B;padding-left:16px;position:relative;"><span style="position:absolute;left:0;color:#4F7B5B;">✓</span>Parallel display of data and birdview</li>
+            <li style="font-size:13.5px;color:#7A736B;padding-left:16px;position:relative;"><span style="position:absolute;left:0;color:#4F7B5B;">✓</span>Simplified position legend</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile iterations -->
+    <div style="margin-top:64px;">
+      <h3 style="font-family:'Newsreader',serif;font-weight:500;font-size:24px;margin:0 0 6px;">Mobile Application Redesign</h3>
+      <p style="font-size:15px;color:#7A736B;margin:0 0 26px;max-width:64ch;">An iterative design process exploring navigation, visual enhancement, and simplicity to achieve the optimal balance.</p>
+      <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#A8A096;margin-bottom:16px;">Design iterations</div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
+        <div>
+          <div style="background:#FFFDF9;border:1px solid rgba(28,26,23,0.10);border-radius:16px;padding:24px 16px;display:flex;align-items:center;justify-content:center;min-height:420px;">
+            <img src="assets/mobile-iter-navigation.png" alt="Navigation-First mobile redesign iteration" style="width:auto;height:380px;max-width:100%;display:block;border-radius:8px;box-shadow:0 8px 24px rgba(28,26,23,0.10);object-fit:contain;">
+          </div>
+          <div style="font-weight:600;font-size:15px;margin-top:14px;">Navigation-First</div>
+          <p style="font-size:13.5px;color:#7A736B;margin:4px 0 0;">Focused on easy movement between positions.</p>
+        </div>
+        <div>
+          <div style="background:#FFFDF9;border:1px solid rgba(28,26,23,0.10);border-radius:16px;padding:24px 16px;display:flex;align-items:center;justify-content:center;min-height:420px;">
+            <img src="assets/mobile-iter-visual.png" alt="Visual-First mobile redesign iteration" style="width:auto;height:380px;max-width:100%;display:block;border-radius:8px;box-shadow:0 8px 24px rgba(28,26,23,0.10);object-fit:contain;">
+          </div>
+          <div style="font-weight:600;font-size:15px;margin-top:14px;">Visual-First</div>
+          <p style="font-size:13.5px;color:#7A736B;margin:4px 0 0;">Emphasis on step clarity with visual aids.</p>
+        </div>
+        <div>
+          <div style="background:#FFFDF9;border:1px solid rgba(28,26,23,0.10);border-radius:16px;padding:24px 16px;display:flex;align-items:center;justify-content:center;min-height:420px;">
+            <img src="assets/mobile-iter-simplistic.png" alt="Simplistic mobile redesign iteration" style="width:auto;height:380px;max-width:100%;display:block;border-radius:8px;box-shadow:0 8px 24px rgba(28,26,23,0.10);object-fit:contain;">
+          </div>
+          <div style="font-weight:600;font-size:15px;margin-top:14px;">Simplistic</div>
+          <p style="font-size:13.5px;color:#7A736B;margin:4px 0 0;">Clean screens with minimized information density.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Final mobile -->
+    <div style="margin-top:56px;">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#A8A096;margin-bottom:16px;">Final mobile design</div>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
+        <div>
+          <div style="background:#FFFDF9;border:1px solid rgba(28,26,23,0.10);border-radius:14px;padding:24px 16px;display:flex;align-items:center;justify-content:center;min-height:420px;">
+            <img src="assets/final-step1-tire-selection.jpg" alt="Step 1 — Tire Selection" style="width:auto;height:380px;max-width:100%;display:block;border-radius:8px;box-shadow:0 8px 24px rgba(28,26,23,0.10);object-fit:contain;">
+          </div>
+          <div style="font-weight:600;font-size:14.5px;margin-top:14px;">Step 1 · Tire Selection</div>
+        </div>
+        <div>
+          <div style="background:#FFFDF9;border:1px solid rgba(28,26,23,0.10);border-radius:14px;padding:24px 16px;display:flex;align-items:center;justify-content:center;min-height:420px;">
+            <img src="assets/final-step2-sensor-assignment.png" alt="Step 2 — Sensor Assignment" style="width:auto;height:380px;max-width:100%;display:block;border-radius:8px;box-shadow:0 8px 24px rgba(28,26,23,0.10);object-fit:contain;">
+          </div>
+          <div style="font-weight:600;font-size:14.5px;margin-top:14px;">Step 2 · Sensor Assignment</div>
+        </div>
+        <div>
+          <div style="background:#FFFDF9;border:1px solid rgba(28,26,23,0.10);border-radius:14px;padding:24px 16px;display:flex;align-items:center;justify-content:center;min-height:420px;">
+            <img src="assets/final-step3-confirmation.png" alt="Step 3 — Confirmation" style="width:auto;height:380px;max-width:100%;display:block;border-radius:8px;box-shadow:0 8px 24px rgba(28,26,23,0.10);object-fit:contain;">
+          </div>
+          <div style="font-weight:600;font-size:14.5px;margin-top:14px;">Step 3 · Confirmation</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Methodology -->
+    <div style="margin-top:64px;display:grid;grid-template-columns:1fr 1fr;gap:48px;">
+      <div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#A8A096;margin-bottom:18px;">Approaches explored</div>
+        <ul style="display:flex;flex-direction:column;gap:16px;">
+          <li><strong style="font-weight:600;font-size:15px;">Navigation-based</strong><div style="font-size:14px;color:#7A736B;">Easy movement between positions.</div></li>
+          <li><strong style="font-weight:600;font-size:15px;">Visually enhanced</strong><div style="font-size:14px;color:#7A736B;">Step clarity with visual aids.</div></li>
+          <li><strong style="font-weight:600;font-size:15px;">Simplistic</strong><div style="font-size:14px;color:#7A736B;">Minimized information density.</div></li>
+        </ul>
+      </div>
+      <div style="background:#EDF4EF;border:1px solid rgba(79,123,91,0.20);border-radius:14px;padding:30px;">
+        <div style="font-weight:600;font-size:16px;color:#4F7B5B;margin-bottom:8px;">Final Solution</div>
+        <p style="font-size:14.5px;color:#5C554D;margin:0 0 18px;">A hybrid approach that balances all three design directions:</p>
+        <ul style="display:flex;flex-direction:column;gap:11px;">
+          <li style="font-size:14.5px;color:#3A352F;padding-left:20px;position:relative;"><span style="position:absolute;left:0;color:#4F7B5B;">✓</span>Clear navigation without clutter</li>
+          <li style="font-size:14.5px;color:#3A352F;padding-left:20px;position:relative;"><span style="position:absolute;left:0;color:#4F7B5B;">✓</span>Progressive disclosure of information</li>
+          <li style="font-size:14.5px;color:#3A352F;padding-left:20px;position:relative;"><span style="position:absolute;left:0;color:#4F7B5B;">✓</span>Clean hierarchy and spacing</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORKFLOW 2: VEHICLE & TIRE DETAILS -->
+  <section id="vehicle-tire-details" style="max-width:1120px;margin:0 auto;padding:96px 40px 0;scroll-margin-top:64px;">
+    <div style="border-top:1px solid rgba(28,26,23,0.12);padding-top:44px;">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:#A8A096;margin-bottom:12px;">Workflow 02 · Improving Navigation &amp; Information Access</div>
+      <h2 style="font-family:'Newsreader',serif;font-weight:500;font-size:clamp(28px,3.6vw,42px);letter-spacing:-0.01em;margin:0 0 40px;">Vehicle &amp; Tire Details</h2>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;">
+        <div style="background:#FBEEEA;border:1px solid rgba(181,71,47,0.18);border-radius:14px;padding:30px;">
+          <div style="display:flex;align-items:center;gap:9px;margin-bottom:18px;"><span style="width:9px;height:9px;border-radius:50%;background:#B5472F;"></span><span style="font-weight:600;font-size:16px;color:#B5472F;white-space:nowrap;">The Challenge</span></div>
+          <ul style="display:flex;flex-direction:column;gap:11px;">
+            <li style="font-size:14.5px;line-height:1.5;color:#5C554D;padding-left:18px;position:relative;"><span style="position:absolute;left:0;color:#B5472F;">•</span>Information-heavy screens with excessive vertical scrolling</li>
+            <li style="font-size:14.5px;line-height:1.5;color:#5C554D;padding-left:18px;position:relative;"><span style="position:absolute;left:0;color:#B5472F;">•</span>Difficult to quickly jump between sections</li>
+            <li style="font-size:14.5px;line-height:1.5;color:#5C554D;padding-left:18px;position:relative;"><span style="position:absolute;left:0;color:#B5472F;">•</span>Limited fast-comparison capabilities</li>
+            <li style="font-size:14.5px;line-height:1.5;color:#5C554D;padding-left:18px;position:relative;"><span style="position:absolute;left:0;color:#B5472F;">•</span>Risk of missing critical information</li>
+            <li style="font-size:14.5px;line-height:1.5;color:#5C554D;padding-left:18px;position:relative;"><span style="position:absolute;left:0;color:#B5472F;">•</span>Slow access to frequently needed data</li>
+          </ul>
+        </div>
+        <div style="background:#EDF4EF;border:1px solid rgba(79,123,91,0.20);border-radius:14px;padding:30px;">
+          <div style="display:flex;align-items:center;gap:9px;margin-bottom:18px;"><span style="width:9px;height:9px;border-radius:50%;background:#4F7B5B;"></span><span style="font-weight:600;font-size:16px;color:#4F7B5B;white-space:nowrap;">The Solution</span></div>
+          <ul style="display:flex;flex-direction:column;gap:11px;">
+            <li style="font-size:14.5px;line-height:1.5;color:#5C554D;padding-left:20px;position:relative;"><span style="position:absolute;left:0;color:#4F7B5B;">✓</span>Clear header &amp; breadcrumbs for orientation</li>
+            <li style="font-size:14.5px;line-height:1.5;color:#5C554D;padding-left:20px;position:relative;"><span style="position:absolute;left:0;color:#4F7B5B;">✓</span>Interactive vehicle birdview for navigation</li>
+            <li style="font-size:14.5px;line-height:1.5;color:#5C554D;padding-left:20px;position:relative;"><span style="position:absolute;left:0;color:#4F7B5B;">✓</span>Clustered information with priority hierarchy</li>
+            <li style="font-size:14.5px;line-height:1.5;color:#5C554D;padding-left:20px;position:relative;"><span style="position:absolute;left:0;color:#4F7B5B;">✓</span>Tab-based organization for quick access</li>
+            <li style="font-size:14.5px;line-height:1.5;color:#5C554D;padding-left:20px;position:relative;"><span style="position:absolute;left:0;color:#4F7B5B;">✓</span>Reduced cognitive load</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:56px;">
+      <h3 style="font-family:'Newsreader',serif;font-weight:500;font-size:24px;margin:0 0 22px;">Design Evolution</h3>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;">
+        <div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#B5472F;margin-bottom:10px;">Before</div>
+          <div style="background:#FFFDF9;border:1px solid rgba(28,26,23,0.10);border-radius:12px;padding:16px;display:flex;align-items:center;justify-content:center;height:300px;">
+            <video src="assets/tires-detail-navigation.mp4" loop="" muted="" playsinline="" onMouseEnter="{{ playVtdVideo }}" onMouseLeave="{{ pauseVtdVideo }}" style="max-width:100%;max-height:100%;width:auto;height:auto;display:block;border-radius:6px;box-shadow:0 6px 18px rgba(28,26,23,0.08);cursor:pointer;object-fit:contain;"></video>
+          </div>
+          <p style="font-size:13.5px;color:#7A736B;margin-top:14px;">Long vertical scroll with difficult navigation and information scattered across the page.</p>
+        </div>
+        <div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#4F7B5B;margin-bottom:10px;">After</div>
+          <div style="background:#FFFDF9;border:1px solid rgba(28,26,23,0.10);border-radius:12px;padding:16px;display:flex;align-items:center;justify-content:center;height:300px;">
+            <img src="assets/vtd-after.png" alt="Vehicle and tire details — after" style="max-width:100%;max-height:100%;width:auto;height:auto;display:block;border-radius:6px;box-shadow:0 6px 18px rgba(28,26,23,0.08);object-fit:contain;">
+          </div>
+          <p style="font-size:13.5px;color:#7A736B;margin-top:14px;">Organized tab structure with interactive birdview and clear information hierarchy.</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:48px;display:flex;gap:10px;">
+      <span style="font-family: 'JetBrains Mono',monospace; font-size: 12px; color: #7A736B; border: 1px solid rgba(28,26,23,0.14); border-radius: 999px; padding: 7px 16px; display: none">Vehicle Creation</span>
+      <span style="font-family: 'JetBrains Mono',monospace; font-size: 12px; color: #FAF7F1; background: #1C1A17; border-radius: 999px; padding: 7px 16px; display: none">Vehicle &amp; Tire Details</span>
+      <span style="font-family: 'JetBrains Mono',monospace; font-size: 12px; color: #7A736B; border: 1px solid rgba(28,26,23,0.14); border-radius: 999px; padding: 7px 16px; display: none">Feature Toggle</span>
+    </div>
+
+    <div style="margin-top:32px;display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
+      <div style="border:1px solid rgba(28,26,23,0.10);border-radius:14px;padding:26px;"><div style="font-weight:600;font-size:16px;margin-bottom:8px;">Navigation</div><p style="font-size:14px;color:#7A736B;margin:0;">Interactive birdview provides both overview and direction for navigation.</p></div>
+      <div style="border:1px solid rgba(28,26,23,0.10);border-radius:14px;padding:26px;"><div style="font-weight:600;font-size:16px;margin-bottom:8px;">Organization</div><p style="font-size:14px;color:#7A736B;margin:0;">Information grouped into tabs for quick access to relevant data.</p></div>
+      <div style="border:1px solid rgba(28,26,23,0.10);border-radius:14px;padding:26px;"><div style="font-weight:600;font-size:16px;margin-bottom:8px;">Testing</div><p style="font-size:14px;color:#7A736B;margin:0;">Online user testing with internal users and a data-placement survey conducted.</p></div>
+    </div>
+  </section>
+
+  <!-- WORKFLOW 3: FEATURE TOGGLE -->
+  <section id="feature-toggle" style="max-width:1120px;margin:0 auto;padding:96px 40px 0;scroll-margin-top:64px;">
+    <div style="border-top:1px solid rgba(28,26,23,0.12);padding-top:44px;">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:#A8A096;margin-bottom:12px;">Workflow 03 · Product Activation &amp; Configuration Interface</div>
+      <h2 style="font-family:'Newsreader',serif;font-weight:500;font-size:clamp(28px,3.6vw,42px);letter-spacing:-0.01em;margin:0 0 40px;">Feature Toggle</h2>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;">
+        <div style="background:#FBEEEA;border:1px solid rgba(181,71,47,0.18);border-radius:14px;padding:30px;">
+          <div style="display:flex;align-items:center;gap:9px;margin-bottom:18px;"><span style="width:9px;height:9px;border-radius:50%;background:#B5472F;"></span><span style="font-weight:600;font-size:16px;color:#B5472F;white-space:nowrap;">The Challenge</span></div>
+          <ul style="display:flex;flex-direction:column;gap:11px;">
+            <li style="font-size:14.5px;line-height:1.5;color:#5C554D;padding-left:18px;position:relative;"><span style="position:absolute;left:0;color:#B5472F;">•</span>Large feature list with horizontal scrolling</li>
+            <li style="font-size:14.5px;line-height:1.5;color:#5C554D;padding-left:18px;position:relative;"><span style="position:absolute;left:0;color:#B5472F;">•</span>No human descriptions or grouping</li>
+            <li style="font-size:14.5px;line-height:1.5;color:#5C554D;padding-left:18px;position:relative;"><span style="position:absolute;left:0;color:#B5472F;">•</span>Hard to understand the impact of enabling features</li>
+            <li style="font-size:14.5px;line-height:1.5;color:#5C554D;padding-left:18px;position:relative;"><span style="position:absolute;left:0;color:#B5472F;">•</span>Navigation becomes inefficient at scale</li>
+            <li style="font-size:14.5px;line-height:1.5;color:#5C554D;padding-left:18px;position:relative;"><span style="position:absolute;left:0;color:#B5472F;">•</span>Difficult to use on smaller screens</li>
+          </ul>
+        </div>
+        <div style="background:#EDF4EF;border:1px solid rgba(79,123,91,0.20);border-radius:14px;padding:30px;">
+          <div style="display:flex;align-items:center;gap:9px;margin-bottom:18px;"><span style="width:9px;height:9px;border-radius:50%;background:#4F7B5B;"></span><span style="font-weight:600;font-size:16px;color:#4F7B5B;white-space:nowrap;">The Solution</span></div>
+          <ul style="display:flex;flex-direction:column;gap:11px;">
+            <li style="font-size:14.5px;line-height:1.5;color:#5C554D;padding-left:20px;position:relative;"><span style="position:absolute;left:0;color:#4F7B5B;">✓</span>Categorized, vertically scrollable list</li>
+            <li style="font-size:14.5px;line-height:1.5;color:#5C554D;padding-left:20px;position:relative;"><span style="position:absolute;left:0;color:#4F7B5B;">✓</span>Brief descriptions for each feature</li>
+            <li style="font-size:14.5px;line-height:1.5;color:#5C554D;padding-left:20px;position:relative;"><span style="position:absolute;left:0;color:#4F7B5B;">✓</span>Clear header actions: Save, Restore, Copy</li>
+            <li style="font-size:14.5px;line-height:1.5;color:#5C554D;padding-left:20px;position:relative;"><span style="position:absolute;left:0;color:#4F7B5B;">✓</span>Faster configuration across feeds and depots</li>
+            <li style="font-size:14.5px;line-height:1.5;color:#5C554D;padding-left:20px;position:relative;"><span style="position:absolute;left:0;color:#4F7B5B;">✓</span>Better scalability for new features</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:56px;">
+      <h3 style="font-family:'Newsreader',serif;font-weight:500;font-size:24px;margin:0 0 22px;">Design Evolution</h3>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;">
+        <div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#B5472F;margin-bottom:10px;">Before</div>
+          <div style="background:#FFFDF9;border:1px solid rgba(28,26,23,0.10);border-radius:12px;padding:16px;display:flex;align-items:center;justify-content:center;height:400px;">
+            <video src="assets/feature-toggle-before.mp4" loop="" muted="" playsinline="" onMouseEnter="{{ playFtVideo }}" onMouseLeave="{{ pauseFtVideo }}" style="max-width:100%;max-height:100%;width:auto;height:auto;display:block;border-radius:6px;box-shadow:0 6px 18px rgba(28,26,23,0.08);cursor:pointer;object-fit:contain;"></video>
+          </div>
+          <p style="font-size:13.5px;color:#7A736B;margin-top:14px;">Horizontal scrolling layout with no categorization or feature explanations.</p>
+        </div>
+        <div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#4F7B5B;margin-bottom:10px;">After</div>
+          <div style="background:#FFFDF9;border:1px solid rgba(28,26,23,0.10);border-radius:12px;padding:16px;display:flex;align-items:center;justify-content:center;height:400px;">
+            <img src="assets/feature-toggle-after.png" alt="Feature toggle — after" style="max-width:100%;max-height:100%;width:auto;height:auto;display:block;border-radius:6px;box-shadow:0 6px 18px rgba(28,26,23,0.08);object-fit:contain;">
+          </div>
+          <p style="font-size:13.5px;color:#7A736B;margin-top:14px;">Simplified vertical list with categories, descriptions, and clear user actions.</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:48px;display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
+      <div style="border:1px solid rgba(28,26,23,0.10);border-radius:14px;padding:26px;"><div style="font-weight:600;font-size:16px;margin-bottom:8px;">Readability</div><p style="font-size:14px;color:#7A736B;margin:0;">Easier to read with clear categorization and brief feature descriptions.</p></div>
+      <div style="border:1px solid rgba(28,26,23,0.10);border-radius:14px;padding:26px;"><div style="font-weight:600;font-size:16px;margin-bottom:8px;">Scalability</div><p style="font-size:14px;color:#7A736B;margin:0;">Vertical list design scales better as new features are added to the platform.</p></div>
+      <div style="border:1px solid rgba(28,26,23,0.10);border-radius:14px;padding:26px;"><div style="font-weight:600;font-size:16px;margin-bottom:8px;">Efficiency</div><p style="font-size:14px;color:#7A736B;margin:0;">Clear actions for saving, restoring defaults, and copying configuration.</p></div>
+    </div>
+
+    <div style="margin-top:28px;background:#FBF4E8;border:1px solid rgba(184,91,51,0.22);border-radius:12px;padding:20px 24px;display:flex;gap:12px;">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#9A4A12;font-weight:500;white-space:nowrap;">Note</span>
+      <p style="font-size:14px;line-height:1.55;color:#5C554D;margin:0;">This design has not yet been tested or developed. The proposed solution aims to create a more simplified and scalable interface that reduces errors and improves configuration speed.</p>
+    </div>
+  </section>
+
+  <!-- IMPACT -->
+  <section style="max-width:1120px;margin:0 auto;padding:96px 40px 0;">
+    <div style="border-top:1px solid rgba(28,26,23,0.12);padding-top:44px;">
+      <h2 style="font-family:'Newsreader',serif;font-weight:500;font-size:clamp(28px,3.6vw,42px);letter-spacing:-0.01em;margin:0 0 40px;">Impact &amp; Learnings</h2>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px;">
+        <div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#A8A096;margin-bottom:16px;">Design Process</div>
+          <p style="font-size:15.5px;line-height:1.6;color:#3A352F;margin:0 0 20px;">Through iterative design, stakeholder collaboration, and user testing, I learned the importance of balancing multiple design approaches to achieve optimal usability.</p>
+          <ul style="display:flex;flex-direction:column;gap:11px;">
+            <li style="font-size:14.5px;color:#5C554D;padding-left:20px;position:relative;"><span style="position:absolute;left:0;color:#4F7B5B;">✓</span>Multiple iterations revealed trade-offs between approaches</li>
+            <li style="font-size:14.5px;color:#5C554D;padding-left:20px;position:relative;"><span style="position:absolute;left:0;color:#4F7B5B;">✓</span>Feedback sessions guided refinement of solutions</li>
+            <li style="font-size:14.5px;color:#5C554D;padding-left:20px;position:relative;"><span style="position:absolute;left:0;color:#4F7B5B;">✓</span>User-research data informed priority and placement</li>
+          </ul>
+        </div>
+        <div>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:#A8A096;margin-bottom:16px;">Key Outcomes</div>
+          <p style="font-size:15.5px;line-height:1.6;color:#3A352F;margin:0 0 20px;">The redesign focused on reducing cognitive load, improving information access, and creating scalable solutions for growing feature sets.</p>
+          <ul style="display:flex;flex-direction:column;gap:11px;">
+            <li style="font-size:14.5px;color:#5C554D;padding-left:20px;position:relative;"><span style="position:absolute;left:0;color:#4F7B5B;">✓</span>Reduced scrolling and improved navigation efficiency</li>
+            <li style="font-size:14.5px;color:#5C554D;padding-left:20px;position:relative;"><span style="position:absolute;left:0;color:#4F7B5B;">✓</span>Clearer information hierarchy and visual context</li>
+            <li style="font-size:14.5px;color:#5C554D;padding-left:20px;position:relative;"><span style="position:absolute;left:0;color:#4F7B5B;">✓</span>More scalable design systems for future features</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer style="max-width:1120px;margin:80px auto 0;padding:40px 40px 64px;border-top:1px solid rgba(28,26,23,0.10);">
+    <p style="font-size:14px;line-height:1.6;color:#7A736B;text-align:center;max-width:80ch;margin:0 auto 28px;">This comprehensive redesign was developed during my work on a B2B fleet-management platform, focusing on improving usability, navigation, and information architecture across multiple core workflows.</p>
+    <div style="text-align:center;"><a href="index.html" style="font-size:13.5px;font-weight:600;color:#B85B33;" style-hover="text-decoration:underline;">← Back to all work</a></div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;challengeText&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Double scroll in a single screen creates confusion in the user experience — many input fields and scrolls on an information-intensive screen increase cognitive load.&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Vehicle Creation Process&quot;}}">
+class Component extends DCLogic {
+  state = { active: null };
+  componentDidMount() {
+    this._ids = ['vehicle-creation', 'vehicle-tire-details', 'feature-toggle'];
+    this._onScroll = () => {
+      const probe = window.scrollY + 120;
+      let cur = null;
+      this._ids.forEach((id) => {
+        const el = document.getElementById(id);
+        if (el) {
+          const top = el.getBoundingClientRect().top + window.scrollY;
+          if (top <= probe) cur = id;
+        }
+      });
+      if (cur !== this.state.active) this.setState({ active: cur });
+    };
+    window.addEventListener('scroll', this._onScroll, { passive: true });
+    this._onScroll();
+  }
+  componentWillUnmount() { if (this._onScroll) window.removeEventListener('scroll', this._onScroll); }
+  _go(id) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    const y = el.getBoundingClientRect().top + window.scrollY - 58;
+    window.scrollTo(0, y);
+  }
+  renderVals() {
+    const a = this.state.active;
+    return {
+      challengeText: this.props.challengeText ?? 'Double scroll in a single screen creates confusion in the user experience — many input fields and scrolls on an information-intensive screen increase cognitive load.',
+      // solution copy rewritten inline in the template
+      playVtdVideo: (e) => { e.currentTarget.play(); },
+      pauseVtdVideo: (e) => { e.currentTarget.pause(); e.currentTarget.currentTime = 0; },
+      playFtVideo: (e) => { e.currentTarget.play(); },
+      pauseFtVideo: (e) => { e.currentTarget.pause(); e.currentTarget.currentTime = 0; },
+      onCreation: a === 'vehicle-creation' ? 'on' : '',
+      onDetails: a === 'vehicle-tire-details' ? 'on' : '',
+      onToggle: a === 'feature-toggle' ? 'on' : '',
+      goCreation: () => this._go('vehicle-creation'),
+      goDetails: () => this._go('vehicle-tire-details'),
+      goToggle: () => this._go('feature-toggle')
+    };
+  }
+}
+</script>
+</body>
+</html>

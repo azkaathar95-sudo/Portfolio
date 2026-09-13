@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&amp;family=Hanken+Grotesk:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box;}
+  html,body{margin:0;}
+  body{background:#FAF7F1;color:#1C1A17;font-family:'Hanken Grotesk',system-ui,sans-serif;-webkit-font-smoothing:antialiased;}
+  ::selection{background:#1C1A17;color:#FAF7F1;}
+  a{color:inherit;text-decoration:none;}
+  ul{margin:0;padding:0;list-style:none;}
+</style>
+</helmet>
+
+<div style="min-height:100vh;">
+
+  <header style="max-width:1120px;margin:0 auto;padding:26px 40px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(28,26,23,0.08);">
+    <a href="index.html" style="font-size:13.5px;font-weight:600;color:#7A736B;" style-hover="color:#1C1A17;">&larr; Back to work</a>
+    <a href="index.html" style="font-family:'Newsreader',serif;font-size:22px;font-weight:500;">Azka<span style="color:#B85B33;">.</span></a>
+  </header>
+
+  <!-- HERO -->
+  <section style="max-width:1120px;margin:0 auto;padding:64px 40px 0;">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:#A8A096;margin-bottom:22px;">My Journey</div>
+    <h1 style="font-family:'Newsreader',serif;font-weight:400;font-size:clamp(38px,5.6vw,62px);line-height:1.04;letter-spacing:-0.015em;margin:0 0 18px;">Azka Athar</h1>
+    <p style="font-size:17px;line-height:1.55;color:#5C554D;margin:0 0 26px;max-width:60ch;">A UX Designer focused on delivering impactful results, with proven strength in project management, user-centric problem-solving and seamless collaboration across teams — and eager to tackle dynamic challenges.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:20px;font-size:13.5px;color:#7A736B;">
+      <span>Hannover, Germany</span>
+      <a href="mailto:azka.athar@gmail.com" style="color:#B85B33;font-weight:600;" style-hover="text-decoration:underline;">azka.athar@gmail.com</a>
+      <a href="https://www.linkedin.com/in/azka-athar/" target="_blank" style="color:#B85B33;font-weight:600;" style-hover="text-decoration:underline;">LinkedIn</a>
+      <a href="https://behance.net/azkaathar" target="_blank" style="color:#B85B33;font-weight:600;" style-hover="text-decoration:underline;">Behance</a>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE TIMELINE -->
+  <section style="max-width:1120px;margin:0 auto;padding:80px 40px 0;">
+    <h2 style="font-family:'Newsreader',serif;font-weight:500;font-size:clamp(24px,3vw,30px);letter-spacing:-0.01em;margin:0 0 48px;">Experience</h2>
+    <div style="position:relative;padding-left:36px;">
+      <div style="position:absolute;left:5px;top:8px;bottom:8px;width:1px;background:rgba(28,26,23,0.14);"></div>
+      <sc-for list="{{ experience }}" as="j" hint-placeholder-count="3">
+        <div style="position:relative;padding-bottom:52px;">
+          <span style="position:absolute;left:-36px;top:4px;width:11px;height:11px;border-radius:50%;background:{{ j.dotColor }};border:2px solid #FAF7F1;box-shadow:0 0 0 1px {{ j.dotColor }};"></span>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#A8A096;margin-bottom:8px;">{{ j.period }}</div>
+          <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 12px;margin-bottom:6px;">
+            <h3 style="font-family:'Newsreader',serif;font-weight:500;font-size:21px;margin:0;">{{ j.title }}</h3>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:{{ j.tagColor }};background:{{ j.tagBg }};border-radius:999px;padding:4px 11px;">{{ j.org }}</span>
+          </div>
+          <ul style="display:flex;flex-direction:column;gap:7px;margin-top:12px;">
+            <sc-for list="{{ j.points }}" as="pt" hint-placeholder-count="3">
+              <li style="font-size:14.5px;line-height:1.55;color:#3A352F;padding-left:16px;position:relative;"><span style="position:absolute;left:0;color:#B85B33;">&bull;</span>{{ pt }}</li>
+            </sc-for>
+          </ul>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- EDUCATION TIMELINE -->
+  <section style="max-width:1120px;margin:0 auto;padding:24px 40px 0;">
+    <h2 style="font-family:'Newsreader',serif;font-weight:500;font-size:clamp(24px,3vw,30px);letter-spacing:-0.01em;margin:0 0 48px;">Education</h2>
+    <div style="position:relative;padding-left:36px;">
+      <div style="position:absolute;left:5px;top:8px;bottom:8px;width:1px;background:rgba(28,26,23,0.14);"></div>
+      <sc-for list="{{ education }}" as="e" hint-placeholder-count="3">
+        <div style="position:relative;padding-bottom:52px;">
+          <span style="position:absolute;left:-36px;top:4px;width:11px;height:11px;border-radius:50%;background:{{ e.dotColor }};border:2px solid #FAF7F1;box-shadow:0 0 0 1px {{ e.dotColor }};"></span>
+          <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#A8A096;margin-bottom:8px;">{{ e.period }}</div>
+          <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 12px;margin-bottom:6px;">
+            <h3 style="font-family:'Newsreader',serif;font-weight:500;font-size:21px;margin:0;">{{ e.title }}</h3>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;color:{{ e.tagColor }};background:{{ e.tagBg }};border-radius:999px;padding:4px 11px;">{{ e.org }}</span>
+          </div>
+          <ul style="display:flex;flex-direction:column;gap:7px;margin-top:12px;">
+            <sc-for list="{{ e.points }}" as="pt2" hint-placeholder-count="3">
+              <li style="font-size:14.5px;line-height:1.55;color:#3A352F;padding-left:16px;position:relative;"><span style="position:absolute;left:0;color:#B85B33;">&bull;</span>{{ pt2 }}</li>
+            </sc-for>
+          </ul>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section style="max-width:1120px;margin:0 auto;padding:16px 40px 0;">
+    <h2 style="font-family:'Newsreader',serif;font-weight:500;font-size:clamp(24px,3vw,30px);letter-spacing:-0.01em;margin:0 0 32px;">Skills &amp; Tools</h2>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:32px;">
+      <div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#A8A096;margin-bottom:12px;">UX Design</div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;">
+          <sc-for list="{{ uxSkills }}" as="s" hint-placeholder-count="5">
+            <span style="font-size:13px;font-weight:500;background:#F1DDCB;color:#9A4A12;border-radius:999px;padding:6px 13px;">{{ s }}</span>
+          </sc-for>
+        </div>
+      </div>
+      <div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#A8A096;margin-bottom:12px;">Software</div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;">
+          <sc-for list="{{ software }}" as="s2" hint-placeholder-count="8">
+            <span style="font-size:13px;font-weight:500;background:#EDF4EF;color:#4F7B5B;border-radius:999px;padding:6px 13px;">{{ s2 }}</span>
+          </sc-for>
+        </div>
+      </div>
+      <div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#A8A096;margin-bottom:12px;">Languages</div>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;">
+          <sc-for list="{{ languages }}" as="l" hint-placeholder-count="2">
+            <span style="font-size:13px;font-weight:500;background:#EAE6F5;color:#5C4A8C;border-radius:999px;padding:6px 13px;">{{ l }}</span>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AWARDS -->
+  <section style="max-width:1120px;margin:0 auto;padding:72px 40px 0;">
+    <h2 style="font-family:'Newsreader',serif;font-weight:500;font-size:clamp(24px,3vw,30px);letter-spacing:-0.01em;margin:0 0 28px;">Awards</h2>
+    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:16px;">
+      <sc-for list="{{ awards }}" as="a" hint-placeholder-count="4">
+        <div style="border:1px solid rgba(28,26,23,0.10);border-radius:12px;padding:20px 22px;">
+          <div style="font-size:14.5px;font-weight:600;margin-bottom:4px;">{{ a.title }}</div>
+          <div style="font-size:13px;color:#7A736B;">{{ a.detail }}</div>
+        </div>
+      </sc-for>
+    </div>
+  </section>
+
+  <!-- INTERESTS -->
+  <section style="max-width:1120px;margin:0 auto;padding:56px 40px 0;">
+    <h2 style="font-family:'Newsreader',serif;font-weight:500;font-size:clamp(24px,3vw,30px);letter-spacing:-0.01em;margin:0 0 20px;">Beyond Design</h2>
+    <p style="font-size:15px;color:#5C554D;margin:0;">Hiking &middot; Cycling &middot; Swimming &middot; Ping Pong &middot; Netflix</p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="max-width:1120px;margin:80px auto 0;padding:40px 40px 64px;border-top:1px solid rgba(28,26,23,0.10);text-align:center;">
+    <a href="index.html" style="font-size:13.5px;font-weight:600;color:#B85B33;" style-hover="text-decoration:underline;">&larr; Back to all work</a>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      experience: [
+        {
+          period: 'Mar 2025 \u2013 Currently', title: 'UX/UI Designer', org: 'Continental, Germany', tagColor: '#9A4A12', tagBg: '#F1DDCB',
+          points: [
+            'Applied the SAFe Agile framework for UI design in collaboration with the IT department.',
+            'Applied the Design Thinking framework across UX projects \u2014 from research and information architecture through design and iteration following usability testing of prototypes built in Figma and Protopie.',
+            'Designed and conducted 20+ user interview sessions, both online and in-field.',
+            'Redesigned 5+ features on the ContiConnect app and web portal in Figma.',
+            'Pitched a gamified survey concept for an exhibition booth to PMs and Sales; collaborated with IT and Marketing to design and run the event, driving 85+ visitor participations in a single day.',
+            'Designed a sensor-installation tool in Adobe Inventor and ran 3D-printed prototype testing.',
+            'Co-organised and ran a two-day usability testing workshop with customers from the Benelux and UK regions \u2014 built Figma prototypes and ran a field-based think-aloud exercise on a mobile application.'
+          ]
+        },
+        {
+          period: 'Mar 2021 \u2013 Feb 2022', title: 'UX Designer', org: 'Little.studio, Pakistan', tagColor: '#9A4A12', tagBg: '#F1DDCB',
+          points: ['Developed TableBuddy, an advanced table reservation system.', 'Conducted usability reviews, identified UX issues and proposed design recommendations.', 'Streamlined manufacturing processes with a focus on reducing production costs.', 'Designed and developed a functional glove-keyboard prototype with Arduino programming.']
+        },
+        {
+          period: 'Aug 2019 \u2013 Mar 2021', title: 'Product Designer', org: 'Little.studio, Pakistan', tagColor: '#9A4A12', tagBg: '#F1DDCB',
+          points: ['Won 1st prize for a design challenge from Italian company AUTEC.', 'Designed, managed, and prototyped a physical game design, ClinkLink.', 'Reduced time-to-market for new products by streamlining the design process and incorporating rapid prototyping techniques.']
+        },
+        {
+          period: 'Sept 2017 – Jul 2018', title: 'Project Lead, Team AUJ — Formula Student FSUK 18', org: 'NUST', tagColor: '#9A4A12', tagBg: '#F1DDCB',
+          points: ['Managed a project budget of over 2 million rupees.', 'Designed the chassis for manufacturing in SolidWorks, including cut files.']
+        }
+      ],
+      education: [
+        {
+          period: 'Oct 2023 \u2013 Aug 2026', title: 'Masters, Usability Engineering (CGPA 1.28)', org: 'Hochschule Rhein-Waal', tagColor: '#4F7B5B', tagBg: '#EDF4EF',
+          points: ['Courses: Psychology for UX, Strategic Usability, UX Project Management, Human-Computer Interaction, Applied Interaction Design.']
+        },
+        {
+          period: 'Aug 2015 \u2013 Jun 2019', title: 'Bachelor, Industrial Design', org: 'NUST', tagColor: '#4F7B5B', tagBg: '#EDF4EF',
+          points: ['National University of Sciences & Technology (NUST), Pakistan.', 'Courses: Design and Visual Communication, Sustainable Design, Manufacturing Processes and Materials, Design Management, Ergonomics, Automotive Design.']
+        }
+      ],
+      uxSkills: ['Wireframing', 'Prototyping', 'User Research', 'Usability Testing', 'Data Analysis', 'User Flows', 'Information Architecture'],
+      software: ['Figma', 'Protopie', 'Miro', 'Trello', 'SolidWorks', 'AutoCAD', '3DS Max', 'Arduino', 'Adobe Suite', 'Figma Make', 'Claude Design'],
+      languages: ['English (C2)', 'German (A1)', 'Urdu (Native)'],
+      awards: [
+        { title: 'AUTEC Transmitter Module Challenge', detail: '1st prize in a design contest.' },
+        { title: 'Presidential Gold Medal Award', detail: 'NUST.' },
+        { title: 'High Achiever\u2019s Award', detail: 'NUST, participation in FSUK 18.' },
+        { title: 'Race Tech \u2014 Spirit of the Event Award', detail: 'Team achievement for project completion with minimal resources (FSUK 18).' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

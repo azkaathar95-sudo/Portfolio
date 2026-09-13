@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&amp;family=Hanken+Grotesk:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+<script src="image-slot.js"></script>
+<style>
+  *{box-sizing:border-box;}
+  html,body{margin:0;}
+  body{background:#FAF7F1;color:#1C1A17;font-family:'Hanken Grotesk',system-ui,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+  ::selection{background:#1C1A17;color:#FAF7F1;}
+  a{color:inherit;text-decoration:none;}
+  @keyframes revealIn{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
+  image-slot{--is-bg:rgba(255,255,255,0.45);}
+  .proj-link{position:relative;cursor:pointer;}
+  .proj-veil{position:absolute;inset:0;border-radius:14px;display:flex;align-items:center;justify-content:center;background:rgba(28,26,23,0);transition:background .35s ease;pointer-events:none;}
+  .proj-veil span{opacity:0;transform:translateY(8px);transition:opacity .35s ease,transform .35s ease;background:#FAF7F1;color:#1C1A17;font-weight:600;font-size:14px;border-radius:999px;padding:11px 22px;box-shadow:0 8px 24px rgba(28,26,23,0.20);}
+  .proj-link:hover .proj-veil{background:rgba(28,26,23,0.20);}
+  .proj-link:hover .proj-veil span{opacity:1;transform:translateY(0);}
+  @keyframes marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+  .tagreel-wrap{overflow:hidden;background:#1C1A17;}
+  .tagreel{display:flex;align-items:center;width:max-content;animation:marquee 32s linear infinite;}
+  .tagreel-wrap:hover .tagreel{animation-play-state:paused;}
+</style>
+</helmet>
+
+<div style="min-height:100vh;">
+
+  <header style="max-width:1120px;margin:0 auto;padding:30px 40px;display:flex;align-items:baseline;justify-content:space-between;">
+    <a href="index.html" style="font-family:'Newsreader',serif;font-size:26px;font-weight:500;letter-spacing:0.01em;">Azka<span style="color:#B85B33;">.</span></a>
+    <nav style="display:flex;gap:34px;font-size:13.5px;font-weight:500;letter-spacing:0.01em;">
+      <a href="resume.html" style="padding-bottom:2px;border-bottom:1px solid transparent;" style-hover="border-bottom:1px solid #D6295E;color:#D6295E;">Resume</a>
+      <a href="https://www.linkedin.com/in/azka-athar/" target="_blank" style="padding-bottom:2px;border-bottom:1px solid transparent;" style-hover="border-bottom:1px solid #D6295E;color:#D6295E;">LinkedIn</a>
+      <a href="mailto:azka.athar@gmail.com" style="padding-bottom:2px;border-bottom:1px solid transparent;" style-hover="border-bottom:1px solid #D6295E;color:#D6295E;">Email</a>
+    </nav>
+  </header>
+
+  <section style="max-width:1120px;margin:0 auto;padding:80px 40px 64px;">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#A8A096;margin-bottom:30px;">UX Designer &amp; Usability Engineer</div>
+    <h1 style="font-family:'Newsreader',serif;font-weight:400;font-size:clamp(40px,6.5vw,76px);line-height:1.02;letter-spacing:-0.015em;margin:0 0 26px;max-width:14ch;">Hi! I am Azka Athar</h1>
+    <p style="font-family:'Newsreader',serif;font-style:italic;font-size:clamp(20px,2.6vw,28px);line-height:1.35;color:#1C1A17;margin:0 0 48px;max-width:26ch;">Curious by nature. Guided by data. Bound by the <span style="color:#D6295E;">“Rules.”</span></p>
+    <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 56px;max-width:840px;">
+      <p style="font-size:17.5px;line-height:1.62;color:#3A352F;margin:0;">I am a <strong style="font-weight:600;">UX Designer</strong> and <strong style="font-weight:600;">Usability Engineer</strong> with a foundation in Industrial Design. I design with intent, with one foot always grounded in the rigor of usability engineering.</p>
+      <p style="font-size: 17.5px; line-height: 1.62; color: #3A352F; margin: 0; display: none">My focus is always on the <strong style="font-weight:600;">technical requirements</strong> that ensure a product is functional, and the <strong style="font-weight:600;">behavioral rules</strong> that ensure it is loved.</p>
+    </div>
+  </section>
+
+  <!-- TAGS REEL -->
+  <div class="tagreel-wrap">
+    <div class="tagreel">
+      <sc-for list="{{ tags }}" as="t" hint-placeholder-count="12">
+        <span style="font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:#FAF7F1;padding:20px 22px;white-space:nowrap;">{{ t }}</span><span style="color:#D6295E;font-size:14px;">•</span>
+      </sc-for>
+      <sc-for list="{{ tags }}" as="t2" hint-placeholder-count="12">
+        <span style="font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:#FAF7F1;padding:20px 22px;white-space:nowrap;">{{ t2 }}</span><span style="color:#D6295E;font-size:14px;">•</span>
+      </sc-for>
+    </div>
+  </div>
+
+  <div style="max-width:1120px;margin:0 auto;padding:0 40px;"><div style="height:1px;background:rgba(28,26,23,0.10);"></div></div>
+
+  <section style="max-width:1120px;margin:0 auto;padding:48px 40px 0;">
+    <p style="width: 833px; height: 21px">A collection of my recent work from 2024–2026 — UX design, industry projects, research, and collaborations.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:14px;margin-top:32px;">
+      <a href="#digital" style="display:none;align-items:center;gap:9px;font-size:14px;font-weight:600;color:#FAF7F1;background:#1C1A17;border:1px solid #1C1A17;border-radius:999px;padding:13px 24px;transition:opacity .25s ease;" style-hover="opacity:0.86;">Digital Product Design <span style="color:#C99A6A;">↓</span></a>
+    </div>
+  </section>
+
+  <!-- DIGITAL PRODUCT DESIGN — SCROLLYTELLING -->
+  <section id="digital" style="max-width:1120px;margin:0 auto;padding:72px 40px 0;scroll-margin-top:24px;">
+    <p style="font-size:15px;color:#7A736B;margin:0 0 8px;">Apps, web platforms, research and collaborations.</p>
+
+    <div style="position:relative;margin-top:40px;display:grid;grid-template-columns:1fr 1fr 24px;gap:44px;">
+
+      <!-- LEFT: sticky crossfading text -->
+      <div style="position:sticky;top:calc(50vh - 230px);align-self:start;height:460px;">
+        <sc-for list="{{ scrollProjects }}" as="sp" hint-placeholder-count="5">
+          <div style="{{ sp.textStyle }}">
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;">
+              <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:{{ sp.tagColor }};background:{{ sp.tagBg }};border-radius:999px;padding:5px 12px;">{{ sp.tag }}</span>
+              <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#A8A096;">{{ sp.role }}</span>
+            </div>
+            <h3 style="font-family:'Newsreader',serif;font-weight:500;font-size:clamp(24px,3vw,32px);letter-spacing:-0.01em;margin:0 0 8px;">{{ sp.title }}</h3>
+            <p style="font-family:'Newsreader',serif;font-style:italic;font-size:16px;color:#8C857C;margin:0 0 18px;">{{ sp.subtitle }}</p>
+            <p style="font-size:15.5px;line-height:1.6;color:#3A352F;margin:0 0 26px;max-width:46ch;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden;">{{ sp.desc }}</p>
+            <div style="display:flex;flex-wrap:wrap;gap:10px;">
+              <sc-for list="{{ sp.links }}" as="lk" hint-placeholder-count="2">
+                <a href="{{ lk.href }}" style="font-size:13.5px;font-weight:600;color:#B85B33;border:1px solid rgba(184,91,51,0.35);border-radius:999px;padding:9px 18px;display:inline-flex;align-items:center;gap:6px;transition:all .2s ease;" style-hover="background:#B85B33;color:#FAF7F1;">{{ lk.label }} →</a>
+              </sc-for>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+
+      <!-- RIGHT: stacked scrolling images -->
+      <div>
+        <sc-for list="{{ scrollProjects }}" as="sp2" hint-placeholder-count="5">
+          <div data-project-idx="{{ sp2.idx }}" style="{{ sp2.wrapStyle }}">
+            <div style="{{ sp2.innerStyle }}">
+              <div role="img" aria-label="{{ sp2.title }}" style="{{ sp2.imgStyle }}"></div>
+              <image-slot id="{{ sp2.slotId }}" style="{{ sp2.slotStyle }}" shape="rounded" radius="16" placeholder="{{ sp2.placeholder }}"></image-slot>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+
+      <!-- Right-edge progress dots -->
+      <div style="position:sticky;top:calc(50vh - 100px);align-self:start;display:flex;flex-direction:column;gap:16px;align-items:center;">
+        <sc-for list="{{ dots }}" as="d" hint-placeholder-count="5">
+          <button onClick="{{ d.onClick }}" title="{{ d.title }}" style="{{ d.style }}"></button>
+        </sc-for>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PHYSICAL PRODUCT DESIGN -->
+  <section id="physical" style="display:none;max-width:1120px;margin:0 auto;padding:72px 40px 0;scroll-margin-top:24px;">
+    <div style="display:flex;align-items:center;gap:18px;margin-bottom:8px;">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.16em;text-transform:uppercase;color:#B85B33;">02</span>
+      <h2 style="font-family:'Newsreader',serif;font-weight:500;font-size:clamp(26px,3.4vw,38px);letter-spacing:-0.01em;margin:0;">Physical Product Design</h2>
+    </div>
+    <p style="font-size:15px;color:#7A736B;margin:0 0 8px 38px;">Industrial design — the foundation everything else is built on.</p>
+    <div style="margin-top:32px;border:1px dashed rgba(28,26,23,0.22);border-radius:16px;padding:72px 40px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px;background:repeating-linear-gradient(45deg,rgba(28,26,23,0.015) 0 14px,transparent 14px 28px);">
+      <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#A8A096;">Coming soon</span>
+      <h3 style="font-family:'Newsreader',serif;font-weight:500;font-size:26px;margin:0;letter-spacing:-0.01em;">Industrial design work, in the making</h3>
+      <p style="font-size:15.5px;line-height:1.6;color:#7A736B;margin:0;max-width:46ch;">A selection of physical product projects will live here. The space is reserved — ready to be filled.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="max-width:1120px;margin:96px auto 0;padding:48px 40px 64px;border-top:1px solid rgba(28,26,23,0.10);">
+    <div style="display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:32px;">
+      <div>
+        <div style="font-family:'Newsreader',serif;font-style:italic;font-size:26px;color:#1C1A17;margin-bottom:18px;">Let’s build something that works.</div>
+        <div style="display:flex;gap:24px;font-size:14px;font-weight:600;">
+          <a href="mailto:azka.athar@gmail.com" style="border-bottom:1px solid rgba(28,26,23,0.2);padding-bottom:2px;" style-hover="border-color:#D6295E;color:#D6295E;">Email</a>
+          <a href="https://www.linkedin.com/in/azka-athar/" target="_blank" style="border-bottom:1px solid rgba(28,26,23,0.2);padding-bottom:2px;" style-hover="border-color:#D6295E;color:#D6295E;">LinkedIn</a>
+          <a href="resume.html" style="border-bottom:1px solid rgba(28,26,23,0.2);padding-bottom:2px;" style-hover="border-color:#D6295E;color:#D6295E;">Resume</a>
+        </div>
+      </div>
+      <div style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:#A8A096;text-align:right;">Azka Athar<br>Portfolio · 2024–2026</div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;heroSubFontSize&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:24,&quot;min&quot;:14,&quot;max&quot;:32,&quot;step&quot;:1,&quot;unit&quot;:&quot;px&quot;,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Hero&quot;}}">
+class Component extends DCLogic {
+  state = { activeProject: 0 };
+
+  _rawProjects = [
+    {
+      tag: 'Continental', tagColor: '#9A4A12', tagBg: '#F1DDCB',
+      title: 'SaaS Platform Simplification for B2B',
+      subtitle: 'ContiConnect · Digital Solutions',
+      role: 'UX / UI Designer',
+      desc: 'I worked in the UX team of Digital Solutions and contributed to simplifying the web portal and mobile application of the ContiConnect product portfolio, through design audits, IA mapping, and end-user testing.',
+      bg: '#F1DDCB', slotId: 'slot-continental', placeholder: 'ContiConnect dashboards — drop mockup', image: 'assets/conticonnect-lite.jpg', hasImage: true, imgSrc: 'assets/conticonnect-lite.jpg',
+      links: [
+        { label: 'Usability Testing', href: 'continental-usability-testing.html' },
+        { label: 'Features Redesign', href: 'continental-features-redesign.html' }
+      ]
+    },
+    {
+      tag: 'Audi', tagColor: '#6B645C', tagBg: '#E4DED4',
+      title: 'Social Responsibility Challenge',
+      subtitle: 'UX Case Study · University Project',
+      role: 'UX Designer',
+      desc: 'A university project with the Sales and Marketing team at Audi, implementing a value-based approach connecting employees, customers, and social challenges as part of Audi\u2019s social responsibility.',
+      bg: '#E4DED4', slotId: 'slot-audi', placeholder: 'Community Uplift — drop mockup', image: 'assets/audi-social-responsibility.png', hasImage: true, imgSrc: 'assets/audi-social-responsibility.png', imgFit: 'contain',
+      links: [{ label: 'View case study', href: 'audi-social-responsibility.html' }]
+    },
+    {
+      tag: 'University', tagColor: '#2E6B3E', tagBg: '#C2E0C6',
+      title: 'Smart Grocery Shopping Experience',
+      subtitle: 'UX / UI Case Study · University Project',
+      role: 'UX Designer',
+      desc: 'With a team of five designers I worked to understand user needs and develop a user-friendly solution, addressing common shopping pain points — locating products, managing budgets, and navigating store layouts.',
+      bg: '#C2E0C6', slotId: 'slot-shopwise', placeholder: 'ShopWise app — drop mockup', image: 'assets/shopwise-hero.png', hasImage: true, imgSrc: 'assets/shopwise-hero.png',
+      links: [{ label: 'View case study', href: 'shopwise.html' }]
+    },
+    {
+      tag: 'Evonik', tagColor: '#1E6E66', tagBg: '#BEE0DB',
+      title: 'Recyclates',
+      subtitle: 'Design Sprint · University Project',
+      role: 'UX Designer',
+      desc: 'In a five-day design sprint, I worked with a team of designers and specialists from Evonik to understand and bridge industry gaps in the ecosystem of recyclates — recycled plastics — and develop a solution.',
+      bg: '#BEE0DB', slotId: 'slot-recyclates', placeholder: 'Trash Trade — drop mockup', image: 'assets/recyclates-card.jpg', hasImage: true, imgSrc: 'assets/recyclates-card.jpg', imgFit: 'cover', imgPos: 'center top',
+      links: [{ label: 'View case study', href: 'recyclates.html' }]
+    }
+  ];
+
+  _tags = ['Design Thinking', 'Storytelling', 'User Experience', 'Usability Testing', 'Prototyping', 'User Flow', 'Storyboarding', 'Wireframing', 'Customer Experience', 'Curiosity', 'Usability Engineering', 'Industrial Design'];
+
+  componentDidMount() {
+    this._onScroll = () => {
+      const els = document.querySelectorAll('[data-project-idx]');
+      if (!els.length) return;
+      const centerY = window.innerHeight / 2;
+      let bestIdx = 0, bestDist = Infinity;
+      els.forEach((el) => {
+        const rect = el.getBoundingClientRect();
+        const elCenter = rect.top + rect.height / 2;
+        const dist = Math.abs(elCenter - centerY);
+        if (dist < bestDist) {
+          bestDist = dist;
+          bestIdx = Number(el.getAttribute('data-project-idx'));
+        }
+      });
+      if (bestIdx !== this.state.activeProject) this.setState({ activeProject: bestIdx });
+    };
+    window.addEventListener('scroll', this._onScroll, { passive: true });
+    this._onScroll();
+  }
+  componentWillUnmount() {
+    if (this._onScroll) window.removeEventListener('scroll', this._onScroll);
+  }
+  _scrollToProject(i) {
+    const el = document.querySelector('[data-project-idx="' + i + '"]');
+    if (!el) return;
+    const rect = el.getBoundingClientRect();
+    const y = rect.top + window.scrollY - (window.innerHeight / 2 - rect.height / 2);
+    window.scrollTo({ top: y, behavior: 'smooth' });
+  }
+
+  renderVals() {
+    const active = this.state.activeProject;
+    const scrollProjects = this._rawProjects.map((p, i, arr) => ({
+      ...p,
+      idx: i,
+      wrapStyle: 'height:' + (p.hasImage ? (p.cardHeight || '480px') : '640px') + ';margin-bottom:' + (i === arr.length - 1 ? '0' : '96px') + ';display:flex;align-items:center;',
+      innerStyle: 'width:100%;' + (p.cardAspect ? 'aspect-ratio:' + p.cardAspect + ';max-height:100%;' : 'height:100%;') + 'background:' + p.bg + ';border-radius:16px;overflow:hidden;display:flex;align-items:center;justify-content:center;padding:' + (p.hasImage ? (p.imgFit === 'contain' ? '32px' : '0px') : '44px') + ';',
+      imgStyle: p.hasImage ? ("width:100%;height:100%;display:block;background-image:url('" + p.image + "');background-size:" + (p.imgFit || 'cover') + ";background-position:" + (p.imgPos || 'center') + ";background-repeat:no-repeat;") : 'display:none;',
+      slotStyle: p.hasImage ? 'display:none;' : 'width:82%;height:100%;display:block;',
+      padding: p.hasImage ? (p.imgFit === 'contain' ? '32px' : '0px') : '44px',
+      textStyle: 'position:absolute;inset:0;transition:opacity .45s ease;opacity:' + (i === active ? 1 : 0) + ';pointer-events:' + (i === active ? 'auto' : 'none') + ';'
+    }));
+    const dots = this._rawProjects.map((p, i) => ({
+      title: p.title,
+      onClick: () => this._scrollToProject(i),
+      style: 'width:10px;height:10px;border-radius:50%;padding:0;cursor:pointer;transition:all .25s ease;border:1px solid ' + (i === active ? '#D6295E' : 'rgba(28,26,23,0.28)') + ';background:' + (i === active ? '#D6295E' : 'transparent') + ';transform:scale(' + (i === active ? 1.35 : 1) + ');'
+    }));
+    return {
+      heroSubStyle: "font-family:'Newsreader',serif;font-size:" + (this.props.heroSubFontSize ?? 24) + "px;line-height:1.4;color:#1C1A17;margin:0;max-width:30ch;",
+      tags: this._tags,
+      scrollProjects,
+      dots
+    };
+  }
+}
+</script>
+</body>
+</html>
